@@ -77,6 +77,27 @@
     revealItems.forEach((el) => revealObserver.observe(el));
   }
 
+  /* ---------- Muted video: play only while on screen ---------- */
+  const videos = document.querySelectorAll('video[data-autoplay]');
+
+  videos.forEach((video) => {
+    video.muted = true;
+    video.defaultMuted = true;
+  });
+
+  if (!reduceMotion && 'IntersectionObserver' in window) {
+    const videoObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) entry.target.play().catch(() => {});
+          else entry.target.pause();
+        });
+      },
+      { threshold: 0.25 }
+    );
+    videos.forEach((video) => videoObserver.observe(video));
+  }
+
   /* ---------- Current year ---------- */
   const year = String(new Date().getFullYear());
   document.querySelectorAll('[data-year]').forEach((el) => { el.textContent = year; });

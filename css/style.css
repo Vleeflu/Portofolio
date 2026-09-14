@@ -125,6 +125,17 @@ section[id], footer[id] { scroll-margin-top: var(--header-h); }
 }
 a:hover .media img, .featured:hover .media img { transform: scale(1.03); }
 
+/* Profile photo: keep the subject (lower half of the shot) in frame */
+.media--portrait img { object-position: 50% 88%; }
+
+/* Portrait video centred in a landscape frame */
+.media--video { background: var(--ink); border-color: var(--ink); }
+.media video {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: contain;
+}
+
 /* ---------- Buttons ---------- */
 .btn {
   display: inline-flex;
