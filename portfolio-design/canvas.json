@@ -1,7 +1,34 @@
 {
   "artboards": [
-    { "file": "Main.dc.html", "title": "Desktop — 1440", "x": 0, "y": 0, "w": 1440, "h": 5300 },
-    { "file": "Mobile.dc.html", "title": "Mobile — 390", "x": 1560, "y": 0, "w": 390, "h": 6000, "is_interactive": true }
+    {
+      "file": "Main.dc.html",
+      "title": "Desktop — 1440",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 5700,
+      "is_interactive": true
+    },
+    {
+      "file": "Mobile.dc.html",
+      "title": "Mobile — 390",
+      "x": 1560,
+      "y": 0,
+      "w": 390,
+      "h": 7400,
+      "is_interactive": true
+    }
   ],
-  "launch": { "view": "canvas" }
+  "annotations": [
+    {
+      "id": "changes-v2",
+      "x": 2040,
+      "y": 0,
+      "w": 360,
+      "text": "Apa yang berubah dari versi sekarang\n\n1. Urutan section tetap: About → Experience → Projects → Contact.\n2. Filter \"Show work relevant to\": AI Engineering / GIS / Data Analysis, sesuai 3 target internship. Proyek yang tidak relevan jadi redup (coba klik).\n3. Screenshot asli StaSIUN dipakai di featured project.\n4. Fakta hero: \"Main stack\" diganti \"Recognition — Top 50 MAPID\" dan GPA masuk ke \"Currently\".\n5. Experience dipecah jadi Education (GPA + coursework) dan Leadership. Freshmen Leader + Partner digabung jadi satu baris.\n6. Link mati (Live site, website gereja) diberi tanda \"soon\" / [add URL] daripada href=\"#\".\n7. Tombol Résumé ada di header; CTA kedua hero jadi \"Get in touch\".\n\nMasih placeholder: foto portrait, gambar Traffic & IoT."
+    }
+  ],
+  "launch": {
+    "view": "canvas"
+  }
 }
