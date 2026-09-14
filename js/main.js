@@ -1,11 +1,9 @@
-// Portfolio — interactions
 (() => {
   const nav = document.getElementById('site-nav');
   const toggle = document.querySelector('.menu-toggle');
   const toggleLabel = toggle.querySelector('.menu-toggle__label');
   const navLinks = [...nav.querySelectorAll('.nav__link')];
 
-  /* ---------- Mobile menu ---------- */
   const setMenu = (open) => {
     nav.classList.toggle('is-open', open);
     toggle.setAttribute('aria-expanded', String(open));
@@ -28,12 +26,10 @@
     }
   });
 
-  // Reset the menu when resizing up to desktop
   window.matchMedia('(min-width: 901px)').addEventListener('change', (e) => {
     if (e.matches) setMenu(false);
   });
 
-  /* ---------- Active nav link while scrolling ---------- */
   const sections = navLinks
     .map((link) => document.querySelector(link.getAttribute('href')))
     .filter(Boolean);
@@ -57,7 +53,6 @@
   );
   sections.forEach((section) => sectionObserver.observe(section));
 
-  /* ---------- Reveal on scroll ---------- */
   const revealItems = document.querySelectorAll('[data-reveal]');
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -77,7 +72,6 @@
     revealItems.forEach((el) => revealObserver.observe(el));
   }
 
-  /* ---------- Muted video: play only while on screen ---------- */
   const videos = document.querySelectorAll('video[data-autoplay]');
 
   videos.forEach((video) => {
@@ -98,7 +92,6 @@
     videos.forEach((video) => videoObserver.observe(video));
   }
 
-  /* ---------- Current year ---------- */
   const year = String(new Date().getFullYear());
   document.querySelectorAll('[data-year]').forEach((el) => { el.textContent = year; });
 })();
