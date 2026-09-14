@@ -1,0 +1,305 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: #EEECE5; -webkit-font-smoothing: antialiased; }
+    a { color: #161512; } a:hover { color: #6E6A61; }
+    .ul:hover { text-decoration: underline; text-underline-offset: 4px; }
+    .row { transition: background-color .25s ease; }
+    .row:hover { background-color: #E6E3DA; }
+    .btn { transition: transform .2s ease; }
+    .btn:hover { transform: translateY(-2px); }
+    .rise { display: block; animation: rise .9s cubic-bezier(.2,.7,.1,1) both; }
+    .rise-2 { animation-delay: .12s; }
+    .fade { animation: fade .8s ease .35s both; }
+    @keyframes rise { from { transform: translateY(100%); } to { transform: translateY(0); } }
+    @keyframes fade { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+  </style>
+</helmet>
+
+<div id="top" style="background: #EEECE5; color: #161512; font-family: 'Bricolage Grotesque', 'Helvetica Neue', Arial, sans-serif; min-height: 100%;">
+
+  <!-- NAV -->
+  <header style="position: sticky; top: 0; z-index: 10; display: flex; align-items: center; justify-content: space-between; padding: 18px 48px; background: rgba(238, 236, 229, 0.9); backdrop-filter: blur(10px); border-bottom: 1px solid #CBC7BC; font-family: 'IBM Plex Mono', ui-monospace, Consolas, monospace; font-size: 13px; letter-spacing: 0.01em;">
+    <a href="#top" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #161512;">
+      <span style="display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; background: #161512; color: #EEECE5; font-weight: 500;">FL</span>
+      <span>Firstname Lastname</span>
+    </a>
+    <nav style="display: flex; align-items: center; gap: 36px;">
+      <a class="ul" href="#about" style="display: flex; gap: 8px; text-decoration: none; color: #161512;"><span style="color: {{accent}};">01</span><span>About</span></a>
+      <a class="ul" href="#experience" style="display: flex; gap: 8px; text-decoration: none; color: #161512;"><span style="color: {{accent}};">02</span><span>Experience</span></a>
+      <a class="ul" href="#projects" style="display: flex; gap: 8px; text-decoration: none; color: #161512;"><span style="color: {{accent}};">03</span><span>Projects</span></a>
+      <a class="ul" href="#contact" style="display: flex; gap: 8px; text-decoration: none; color: #161512;"><span style="color: {{accent}};">04</span><span>Contact</span></a>
+    </nav>
+    <div style="display: flex; align-items: center; gap: 10px; color: #6E6A61;">
+      <span style="width: 8px; height: 8px; border-radius: 50%; background: {{accent}};"></span>
+      <span>[Open to internships]</span>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section style="padding: 88px 48px 0 48px;">
+    <div style="display: flex; justify-content: space-between; font-family: 'IBM Plex Mono', ui-monospace, Consolas, monospace; font-size: 13px; color: #6E6A61; text-transform: uppercase; letter-spacing: 0.06em;">
+      <span>[Role] / [Role] / [Role]</span>
+      <span>Portfolio — [Year]</span>
+    </div>
+    <h1 style="margin: 28px 0 0 0; font-size: 216px; line-height: 0.9; font-weight: 800; letter-spacing: -0.05em;">
+      <span style="display: block; overflow: hidden; padding-bottom: 6px;"><span class="rise">Firstname</span></span>
+      <span style="display: block; overflow: hidden; padding-bottom: 6px;"><span class="rise rise-2">Lastname<span style="color: {{accent}};">.</span></span></span>
+    </h1>
+    <div class="fade" style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 24px; margin-top: 56px; align-items: end;">
+      <p style="grid-column: 1 / span 6; margin: 0; font-size: 24px; line-height: 1.4; color: #3A3833; text-wrap: pretty;">[A two–three sentence introduction: what you do, what you care about, and what kind of work you want to do next.]</p>
+      <div style="grid-column: 8 / span 5; display: flex; justify-content: flex-end; gap: 12px;">
+        <a class="btn" href="#projects" style="display: flex; align-items: center; gap: 10px; height: 52px; padding: 0 24px; background: #161512; color: #EEECE5; text-decoration: none; font-size: 16px; font-weight: 500;">
+          <span>View selected work</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 3v10M4 9l4 4 4-4"></path></svg>
+        </a>
+        <a class="btn" href="#" style="display: flex; align-items: center; gap: 10px; height: 52px; padding: 0 24px; border: 1px solid #161512; color: #161512; text-decoration: none; font-size: 16px; font-weight: 500; box-sizing: border-box;">
+          <span>Résumé</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 11L11 5M6 5h5v5"></path></svg>
+        </a>
+      </div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 72px; border-top: 1px solid #161512; border-bottom: 1px solid #CBC7BC;">
+      <div style="display: flex; flex-direction: column; gap: 8px; padding: 22px 24px 24px 0;">
+        <span style="font-family: 'IBM Plex Mono', ui-monospace, Consolas, monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: #6E6A61;">Based in</span>
+        <span style="font-size: 20px;">[City, Country]</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px; padding: 22px 24px 24px 24px; border-left: 1px solid #CBC7BC;">
+        <span style="font-family: 'IBM Plex Mono', ui-monospace, Consolas, monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: #6E6A61;">Focus</span>
+        <span style="font-size: 20px;">[Main field]</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px; padding: 22px 24px 24px 24px; border-left: 1px solid #CBC7BC;">
+        <span style="font-family: 'IBM Plex Mono', ui-monospace, Consolas, monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: #6E6A61;">Currently</span>
+        <span style="font-size: 20px;">[Studying / working at]</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px; padding: 22px 24px 24px 24px; border-left: 1px solid #CBC7BC;">
+        <span style="font-family: 'IBM Plex Mono', ui-monospace, Consolas, monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: #6E6A61;">Main stack</span>
+        <span style="font-size: 20px;">[Tool, Tool, Tool]</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 01 ABOUT -->
+  <section id="about" style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 24px; padding: 128px 48px 120px 48px;">
+    <div style="grid-column: 1 / span 3; display: flex; flex-direction: column; gap: 6px; font-family: 'IBM Plex Mono', ui-monospace, Consolas, monospace; font-size: 13px; text-transform: uppercase; letter-spacing: 0.06em;">
+      <span style="color: {{accent}};">(01)</span>
+      <span>About</span>
+    </div>
+    <div style="grid-column: 4 / span 9; display: flex; flex-direction: column; gap: 64px;">
+      <h2 style="margin: 0; font-size: 52px; line-height: 1.08; font-weight: 500; letter-spacing: -0.025em; text-wrap: pretty;">[One strong sentence about who you are — the thing you want a visitor to remember after leaving.]</h2>
+      <div style="display: grid; grid-template-columns: repeat(9, minmax(0, 1fr)); gap: 24px;">
+        <div style="grid-column: 1 / span 4; aspect-ratio: 4 / 5; display: flex; align-items: flex-end; padding: 16px; box-sizing: border-box; border: 1px solid #CBC7BC; background-color: #E7E4DB; background-image: repeating-linear-gradient(135deg, #D9D5CA 0 1px, transparent 1px 12px); font-family: 'IBM Plex Mono', ui-monospace, Consolas, monospace; font-size: 12px; color: #6E6A61;">[Portrait — 4:5]</div>
+        <div style="grid-column: 5 / span 5; display: flex; flex-direction: column; gap: 40px;">
+          <div style="display: flex; flex-direction: column; gap: 18px; font-size: 18px; line-height: 1.6; color: #3A3833;">
+            <p style="margin: 0; text-wrap: pretty;">[Paragraph one: your background — how you got into this field and what you study or work on now.]</p>
+            <p style="margin: 0; text-wrap: pretty;">[Paragraph two: how you work, what you're curious about, and what you do outside of screens.]</p>
+          </div>
+          <div style="display: flex; flex-direction: column; border-top: 1px solid #CBC7BC;">
+            <div style="display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 16px; padding: 18px 0; border-bottom: 1px solid #CBC7BC;">
+              <span style="font-family: 'IBM Plex Mono', ui-monospace, Consolas, monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: #6E6A61; padding-top: 5px;">Languages</span>
+              <div style="display: flex; flex-wrap: wrap; gap: 8px; font-family: 'IBM Plex Mono', ui-monospace, Consolas, monospace; font-size: 13px;">
+                <span style="padding: 4px 10px; border: 1px solid #B9B4A8;">[Skill]</span><span style="padding: 4px 10px; border: 1px solid #B9B4A8;">[Skill]</span><span style="padding: 4px 10px; border: 1px solid #B9B4A8;">[Skill]</span>
+              </div>
+            </div>
+            <div style="display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 16px; padding: 18px 0; border-bottom: 1px solid #CBC7BC;">
+              <span style="font-family: 'IBM Plex Mono', ui-monospace, Consolas, monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: #6E6A61; padding-top: 5px;">Frameworks</span>
+              <div style="display: flex; flex-wrap: wrap; gap: 8px; font-family: 'IBM Plex Mono', ui-monospace, Consolas, monospace; font-size: 13px;">
+                <span style="padding: 4px 10px; border: 1px solid #B9B4A8;">[Skill]</span><span style="padding: 4px 10px; border: 1px solid #B9B4A8;">[Skill]</span><span style="padding: 4px 10px; border: 1px solid #B9B4A8;">[Skill]</span>
+              </div>
+            </div>
+            <div style="display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 16px; padding: 18px 0; border-bottom: 1px solid #CBC7BC;">
+              <span style="font-family: 'IBM Plex Mono', ui-monospace, Consolas, monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: #6E6A61; padding-top: 5px;">Tools</span>
+              <div style="display: flex; flex-wrap: wrap; gap: 8px; font-family: 'IBM Plex Mono', ui-monospace, Consolas, monospace; font-size: 13px;">
+                <span style="padding: 4px 10px; border: 1px solid #B9B4A8;">[Skill]</span><span style="padding: 4px 10px; border: 1px solid #B9B4A8;">[Skill]</span><span style="padding: 4px 10px; border: 1px solid #B9B4A8;">[Skill]</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 EXPERIENCE -->
+  <section id="experience" style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 24px; padding: 0 48px 128px 48px;">
+    <div style="grid-column: 1 / span 3; display: flex; flex-direction: column; gap: 6px; padding-top: 28px; font-family: 'IBM Plex Mono', ui-monospace, Consolas, monospace; font-size: 13px; text-transform: uppercase; letter-spacing: 0.06em;">
+      <span style="color: {{accent}};">(02)</span>
+      <span>Experience</span>
+    </div>
+    <div style="grid-column: 4 / span 9; display: flex; flex-direction: column; border-top: 1px solid #161512;">
+      <div class="row" style="display: grid; grid-template-columns: repeat(9, minmax(0, 1fr)); gap: 24px; padding: 30px 0; border-bottom: 1px solid #CBC7BC;">
+        <span style="grid-column: 1 / span 2; font-family: 'IBM Plex Mono', ui-monospace, Consolas, monospace; font-size: 13px; color: #6E6A61; padding-top: 6px;">[2024] — Now</span>
+        <div style="grid-column: 3 / span 3; display: flex; flex-direction: column; gap: 4px;">
+          <span style="font-size: 28px; font-weight: 500; letter-spacing: -0.015em;">[Role title]</span>
+          <span style="font-size: 17px; color: #6E6A61;">[Organisation] · [City]</span>
+        </div>
+        <div style="grid-column: 6 / span 4; display: flex; flex-direction: column; gap: 14px;">
+          <p style="margin: 0; font-size: 17px; line-height: 1.55; color: #3A3833; text-wrap: pretty;">[What you were responsible for, and what changed because of your work.]</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; font-family: 'IBM Plex Mono', ui-monospace, Consolas, monospace; font-size: 12px; color: #6E6A61;"><span>[Skill]</span><span>/</span><span>[Skill]</span><span>/</span><span>[Skill]</span></div>
+        </div>
+      </div>
+      <div class="row" style="display: grid; grid-template-columns: repeat(9, minmax(0, 1fr)); gap: 24px; padding: 30px 0; border-bottom: 1px solid #CBC7BC;">
+        <span style="grid-column: 1 / span 2; font-family: 'IBM Plex Mono', ui-monospace, Consolas, monospace; font-size: 13px; color: #6E6A61; padding-top: 6px;">[2023] — [2024]</span>
+        <div style="grid-column: 3 / span 3; display: flex; flex-direction: column; gap: 4px;">
+          <span style="font-size: 28px; font-weight: 500; letter-spacing: -0.015em;">[Role title]</span>
+          <span style="font-size: 17px; color: #6E6A61;">[Organisation] · [City]</span>
+        </div>
+        <div style="grid-column: 6 / span 4; display: flex; flex-direction: column; gap: 14px;">
+          <p style="margin: 0; font-size: 17px; line-height: 1.55; color: #3A3833; text-wrap: pretty;">[What you were responsible for, and what changed because of your work.]</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; font-family: 'IBM Plex Mono', ui-monospace, Consolas, monospace; font-size: 12px; color: #6E6A61;"><span>[Skill]</span><span>/</span><span>[Skill]</span><span>/</span><span>[Skill]</span></div>
+        </div>
+      </div>
+      <div class="row" style="display: grid; grid-template-columns: repeat(9, minmax(0, 1fr)); gap: 24px; padding: 30px 0; border-bottom: 1px solid #CBC7BC;">
+        <span style="grid-column: 1 / span 2; font-family: 'IBM Plex Mono', ui-monospace, Consolas, monospace; font-size: 13px; color: #6E6A61; padding-top: 6px;">[2022] — [2023]</span>
+        <div style="grid-column: 3 / span 3; display: flex; flex-direction: column; gap: 4px;">
+          <span style="font-size: 28px; font-weight: 500; letter-spacing: -0.015em;">[Education / programme]</span>
+          <span style="font-size: 17px; color: #6E6A61;">[School] · [City]</span>
+        </div>
+        <div style="grid-column: 6 / span 4; display: flex; flex-direction: column; gap: 14px;">
+          <p style="margin: 0; font-size: 17px; line-height: 1.55; color: #3A3833; text-wrap: pretty;">[Focus of your studies, a notable course, club or result.]</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; font-family: 'IBM Plex Mono', ui-monospace, Consolas, monospace; font-size: 12px; color: #6E6A61;"><span>[Skill]</span><span>/</span><span>[Skill]</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 PROJECTS -->
+  <section id="projects" style="display: flex; flex-direction: column; gap: 56px; padding: 0 48px 128px 48px;">
+    <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 24px; align-items: end; padding-top: 28px; border-top: 1px solid #161512;">
+      <div style="grid-column: 1 / span 3; display: flex; flex-direction: column; gap: 6px; font-family: 'IBM Plex Mono', ui-monospace, Consolas, monospace; font-size: 13px; text-transform: uppercase; letter-spacing: 0.06em;">
+        <span style="color: {{accent}};">(03)</span>
+        <span>Selected work</span>
+      </div>
+      <h2 style="grid-column: 4 / span 7; margin: 0; font-size: 96px; line-height: 0.95; font-weight: 700; letter-spacing: -0.04em;">Projects</h2>
+      <span style="grid-column: 11 / span 2; justify-self: end; font-family: 'IBM Plex Mono', ui-monospace, Consolas, monospace; font-size: 13px; color: #6E6A61;">[06] total</span>
+    </div>
+
+    <!-- featured -->
+    <article style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 24px;">
+      <div style="grid-column: 1 / span 8; aspect-ratio: 16 / 10; display: flex; align-items: flex-end; padding: 16px; box-sizing: border-box; border: 1px solid #CBC7BC; background-color: #E7E4DB; background-image: repeating-linear-gradient(135deg, #D9D5CA 0 1px, transparent 1px 12px); font-family: 'IBM Plex Mono', ui-monospace, Consolas, monospace; font-size: 12px; color: #6E6A61;">[Project screenshot — 16:10]</div>
+      <div style="grid-column: 9 / span 4; display: flex; flex-direction: column; justify-content: space-between; gap: 32px;">
+        <div style="display: flex; flex-direction: column; gap: 18px;">
+          <div style="display: flex; justify-content: space-between; font-family: 'IBM Plex Mono', ui-monospace, Consolas, monospace; font-size: 13px; color: #6E6A61;"><span style="color: {{accent}};">01 — Featured</span><span>[2025]</span></div>
+          <h3 style="margin: 0; font-size: 44px; line-height: 1.02; font-weight: 700; letter-spacing: -0.03em;">[Project name]</h3>
+          <p style="margin: 0; font-size: 18px; line-height: 1.55; color: #3A3833; text-wrap: pretty;">[The problem, what you built, and the result — two or three sentences.]</p>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 24px;">
+          <div style="display: flex; flex-direction: column; border-top: 1px solid #CBC7BC; font-size: 15px;">
+            <div style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #CBC7BC;"><span style="font-family: 'IBM Plex Mono', ui-monospace, Consolas, monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: #6E6A61;">Role</span><span>[Your role]</span></div>
+            <div style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #CBC7BC;"><span style="font-family: 'IBM Plex Mono', ui-monospace, Consolas, monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: #6E6A61;">Stack</span><span>[Tech, Tech, Tech]</span></div>
+            <div style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #CBC7BC;"><span style="font-family: 'IBM Plex Mono', ui-monospace, Consolas, monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: #6E6A61;">Type</span><span>[Web app / Research / …]</span></div>
+          </div>
+          <div style="display: flex; gap: 24px; font-size: 16px; font-weight: 500;">
+            <a class="ul" href="#" style="display: flex; align-items: center; gap: 6px; text-decoration: none; color: #161512;"><span>Live site</span><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 11L11 5M6 5h5v5"></path></svg></a>
+            <a class="ul" href="#" style="display: flex; align-items: center; gap: 6px; text-decoration: none; color: #161512;"><span>Source code</span><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 11L11 5M6 5h5v5"></path></svg></a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- pair -->
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 40px;">
+      <article style="display: flex; flex-direction: column; gap: 20px;">
+        <div style="aspect-ratio: 4 / 3; display: flex; align-items: flex-end; padding: 16px; box-sizing: border-box; border: 1px solid #CBC7BC; background-color: #E7E4DB; background-image: repeating-linear-gradient(135deg, #D9D5CA 0 1px, transparent 1px 12px); font-family: 'IBM Plex Mono', ui-monospace, Consolas, monospace; font-size: 12px; color: #6E6A61;">[Project image — 4:3]</div>
+        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px;">
+          <div style="display: flex; align-items: baseline; gap: 14px;">
+            <span style="font-family: 'IBM Plex Mono', ui-monospace, Consolas, monospace; font-size: 13px; color: {{accent}};">02</span>
+            <h3 style="margin: 0; font-size: 32px; font-weight: 700; letter-spacing: -0.025em;">[Project name]</h3>
+          </div>
+          <span style="font-family: 'IBM Plex Mono', ui-monospace, Consolas, monospace; font-size: 13px; color: #6E6A61;">[2024]</span>
+        </div>
+        <p style="margin: 0; max-width: 560px; font-size: 17px; line-height: 1.55; color: #3A3833; text-wrap: pretty;">[One or two sentences on what it is and why it matters.]</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px; font-family: 'IBM Plex Mono', ui-monospace, Consolas, monospace; font-size: 12px;"><span style="padding: 4px 10px; border: 1px solid #B9B4A8;">[Tech]</span><span style="padding: 4px 10px; border: 1px solid #B9B4A8;">[Tech]</span><span style="padding: 4px 10px; border: 1px solid #B9B4A8;">[Tech]</span></div>
+      </article>
+      <article style="display: flex; flex-direction: column; gap: 20px;">
+        <div style="aspect-ratio: 4 / 3; display: flex; align-items: flex-end; padding: 16px; box-sizing: border-box; border: 1px solid #CBC7BC; background-color: #E7E4DB; background-image: repeating-linear-gradient(135deg, #D9D5CA 0 1px, transparent 1px 12px); font-family: 'IBM Plex Mono', ui-monospace, Consolas, monospace; font-size: 12px; color: #6E6A61;">[Project image — 4:3]</div>
+        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px;">
+          <div style="display: flex; align-items: baseline; gap: 14px;">
+            <span style="font-family: 'IBM Plex Mono', ui-monospace, Consolas, monospace; font-size: 13px; color: {{accent}};">03</span>
+            <h3 style="margin: 0; font-size: 32px; font-weight: 700; letter-spacing: -0.025em;">[Project name]</h3>
+          </div>
+          <span style="font-family: 'IBM Plex Mono', ui-monospace, Consolas, monospace; font-size: 13px; color: #6E6A61;">[2024]</span>
+        </div>
+        <p style="margin: 0; max-width: 560px; font-size: 17px; line-height: 1.55; color: #3A3833; text-wrap: pretty;">[One or two sentences on what it is and why it matters.]</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px; font-family: 'IBM Plex Mono', ui-monospace, Consolas, monospace; font-size: 12px;"><span style="padding: 4px 10px; border: 1px solid #B9B4A8;">[Tech]</span><span style="padding: 4px 10px; border: 1px solid #B9B4A8;">[Tech]</span><span style="padding: 4px 10px; border: 1px solid #B9B4A8;">[Tech]</span></div>
+      </article>
+    </div>
+
+    <!-- archive -->
+    <div style="display: flex; flex-direction: column; margin-top: 40px;">
+      <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 24px; padding-bottom: 14px; border-bottom: 1px solid #161512; font-family: 'IBM Plex Mono', ui-monospace, Consolas, monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: #6E6A61;">
+        <span style="grid-column: 1 / span 1;">Year</span>
+        <span style="grid-column: 2 / span 5;">More projects</span>
+        <span style="grid-column: 7 / span 2;">Type</span>
+        <span style="grid-column: 9 / span 3;">Built with</span>
+        <span style="grid-column: 12 / span 1; justify-self: end;">Link</span>
+      </div>
+      <a class="row" href="#" style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 24px; align-items: center; padding: 20px 0; border-bottom: 1px solid #CBC7BC; text-decoration: none; color: #161512;">
+        <span style="grid-column: 1 / span 1; font-family: 'IBM Plex Mono', ui-monospace, Consolas, monospace; font-size: 13px; color: #6E6A61;">[2023]</span>
+        <span style="grid-column: 2 / span 5; font-size: 22px; font-weight: 500;">[Project name]</span>
+        <span style="grid-column: 7 / span 2; font-size: 15px; color: #6E6A61;">[Type]</span>
+        <span style="grid-column: 9 / span 3; font-family: 'IBM Plex Mono', ui-monospace, Consolas, monospace; font-size: 13px; color: #6E6A61;">[Tech, Tech]</span>
+        <svg style="grid-column: 12 / span 1; justify-self: end;" width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 11L11 5M6 5h5v5"></path></svg>
+      </a>
+      <a class="row" href="#" style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 24px; align-items: center; padding: 20px 0; border-bottom: 1px solid #CBC7BC; text-decoration: none; color: #161512;">
+        <span style="grid-column: 1 / span 1; font-family: 'IBM Plex Mono', ui-monospace, Consolas, monospace; font-size: 13px; color: #6E6A61;">[2023]</span>
+        <span style="grid-column: 2 / span 5; font-size: 22px; font-weight: 500;">[Project name]</span>
+        <span style="grid-column: 7 / span 2; font-size: 15px; color: #6E6A61;">[Type]</span>
+        <span style="grid-column: 9 / span 3; font-family: 'IBM Plex Mono', ui-monospace, Consolas, monospace; font-size: 13px; color: #6E6A61;">[Tech, Tech]</span>
+        <svg style="grid-column: 12 / span 1; justify-self: end;" width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 11L11 5M6 5h5v5"></path></svg>
+      </a>
+      <a class="row" href="#" style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 24px; align-items: center; padding: 20px 0; border-bottom: 1px solid #CBC7BC; text-decoration: none; color: #161512;">
+        <span style="grid-column: 1 / span 1; font-family: 'IBM Plex Mono', ui-monospace, Consolas, monospace; font-size: 13px; color: #6E6A61;">[2022]</span>
+        <span style="grid-column: 2 / span 5; font-size: 22px; font-weight: 500;">[Project name]</span>
+        <span style="grid-column: 7 / span 2; font-size: 15px; color: #6E6A61;">[Type]</span>
+        <span style="grid-column: 9 / span 3; font-family: 'IBM Plex Mono', ui-monospace, Consolas, monospace; font-size: 13px; color: #6E6A61;">[Tech, Tech]</span>
+        <svg style="grid-column: 12 / span 1; justify-self: end;" width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 11L11 5M6 5h5v5"></path></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- 04 CONTACT -->
+  <footer id="contact" style="display: flex; flex-direction: column; gap: 96px; padding: 112px 48px 36px 48px; background: #161512; color: #EEECE5;">
+    <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 24px; align-items: end;">
+      <div style="grid-column: 1 / span 8; display: flex; flex-direction: column; gap: 36px;">
+        <div style="display: flex; gap: 12px; font-family: 'IBM Plex Mono', ui-monospace, Consolas, monospace; font-size: 13px; text-transform: uppercase; letter-spacing: 0.06em;">
+          <span style="color: {{accent}};">(04)</span><span>Contact</span>
+        </div>
+        <h2 style="margin: 0; font-size: 156px; line-height: 0.9; font-weight: 800; letter-spacing: -0.05em;">Let's talk<span style="color: {{accent}};">.</span></h2>
+        <a class="ul" href="#" style="display: flex; align-items: center; gap: 14px; font-size: 40px; font-weight: 500; letter-spacing: -0.02em; color: #EEECE5; text-decoration: none;">
+          <span>[you@email.com]</span>
+          <svg width="30" height="30" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M5 11L11 5M6 5h5v5"></path></svg>
+        </a>
+      </div>
+      <div style="grid-column: 9 / span 4; display: flex; flex-direction: column; border-top: 1px solid #3A3833;">
+        <a class="ul" href="#" style="display: flex; justify-content: space-between; align-items: center; padding: 18px 0; border-bottom: 1px solid #3A3833; color: #EEECE5; text-decoration: none; font-size: 18px;"><span>GitHub</span><span style="font-family: 'IBM Plex Mono', ui-monospace, Consolas, monospace; font-size: 13px; color: #9A958B;">[@username]</span></a>
+        <a class="ul" href="#" style="display: flex; justify-content: space-between; align-items: center; padding: 18px 0; border-bottom: 1px solid #3A3833; color: #EEECE5; text-decoration: none; font-size: 18px;"><span>LinkedIn</span><span style="font-family: 'IBM Plex Mono', ui-monospace, Consolas, monospace; font-size: 13px; color: #9A958B;">[/in/username]</span></a>
+        <a class="ul" href="#" style="display: flex; justify-content: space-between; align-items: center; padding: 18px 0; border-bottom: 1px solid #3A3833; color: #EEECE5; text-decoration: none; font-size: 18px;"><span>[Other profile]</span><span style="font-family: 'IBM Plex Mono', ui-monospace, Consolas, monospace; font-size: 13px; color: #9A958B;">[@username]</span></a>
+        <a class="ul" href="#" style="display: flex; justify-content: space-between; align-items: center; padding: 18px 0; border-bottom: 1px solid #3A3833; color: #EEECE5; text-decoration: none; font-size: 18px;"><span>Résumé</span><span style="font-family: 'IBM Plex Mono', ui-monospace, Consolas, monospace; font-size: 13px; color: #9A958B;">PDF</span></a>
+      </div>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 24px; border-top: 1px solid #3A3833; font-family: 'IBM Plex Mono', ui-monospace, Consolas, monospace; font-size: 12px; color: #9A958B;">
+      <span>© [Year] Firstname Lastname</span>
+      <span>[City, Country]</span>
+      <a class="ul" href="#top" style="display: flex; align-items: center; gap: 8px; color: #EEECE5; text-decoration: none;"><span>Back to top</span><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 13V3M4 7l4-4 4 4"></path></svg></a>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script data-dc-script data-props='{"accent":{"editor":"color","default":"#E0542C","options":["#E0542C","#3F74E0","#3A9A5B","#161512"]},"$preview":{"width":1440,"height":5500}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { accent: this.props.accent ?? '#E0542C' };
+  }
+}
+</script>
+</body>
+</html>
